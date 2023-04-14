@@ -1,0 +1,435 @@
+body{
+    background-color: rgb(238, 238, 238);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(46, 46, 46);
+}
+
+/* HEADER DO SITE*/
+/* BARRA DE NAVEGACAO */
+#topo .navbar{
+    background-image: linear-gradient(to right top, rgba(23, 20, 58, 0.979), rgba(4, 1, 43, 0.973));
+    box-shadow: 1px 1px 13px #0038d1;
+}
+
+#topo .navbar-toggler {
+    border-radius: 7px 0 7px 0;
+    margin-right: 10px;
+    padding: 0 5px;
+    font-size: 1.4em;
+    background-color: rgba(223, 223, 223, 0.233);
+    box-shadow: 1px 1px 5px rgb(43, 43, 43) !important;
+}
+
+#topo .navbar-toggler:focus,
+#modal-de-atuacao .btn-close:focus{
+    box-shadow: none;
+}
+
+#topo .nav-link
+{
+    font-weight: 450;
+    color: rgb(216, 216, 216);
+    text-shadow: 1px 1px 8px rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#footer .link-me:hover,
+#topo .nav-link:hover,
+#topo .navbar-toggler:hover{
+    cursor: pointer;
+    transition: 0.5s;
+    color: rgb(217, 222, 235);
+    text-shadow: 2px 2px 17px rgb(172, 172, 172);
+}
+#banner{
+    height: 80vh;
+}
+
+#banner .item-1{
+    background-image: url(../imagens/pexels-cottonbro-studio-4753993.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 80vh;
+}
+#banner .item-2{
+    background-image: url(../imagens/pexels-agung-pandit-wiguna-1128318.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 80vh;
+}
+#banner .item-3{
+    background-image: url(../imagens/pexels-pixabay-237272\ \(1\).jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 80vh;
+}
+
+#banner .carousel-caption{
+    width: 100%;
+    height: 25%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.568);
+    color: #ffffff;
+}
+#banner .carousel-caption h5{
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+#banner .carousel-control-prev{
+    justify-content: start;
+}
+#banner .carousel-control-next{
+    justify-content: end;
+}
+#banner .carousel-control-prev span, 
+.carousel-control-next span{
+    height: 10%;
+    background-color: #000000;
+}
+
+#login{
+    background-image: url(../imagens/login/pexels-pixabay-247676.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+#login .container-fluid{
+    backdrop-filter: blur(0.3em);
+    background-color: #28282885;
+    width: 100%;
+    height: 100vh;
+    padding-left: 100px;
+}
+
+#login .center-componentes{
+    backdrop-filter: blur(2rem);
+    background-color: #2d2d2dcd;
+    border-left: 2px solid #5b5b5b;
+    border-top: 2px solid #747474;
+    border-right: 2px solid #323232;
+    border-bottom: 2px solid #383838;   
+    border-radius: 4px;
+    max-width: 400px;
+    max-height: 300px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    position: absolute;
+}
+#login .form-floating .form-control{
+    color: rgb(238, 238, 238);
+    border-radius: 0;
+    background-color: rgba(60, 60, 60, 0.502);
+    border: none;
+    border-bottom: 1px solid rgba(2, 2, 2, 0.527);
+}
+#login .form-floating .form-control:focus{
+    box-shadow: none;
+}
+#login .form-floating label{
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+}
+#login .form-floating .floating-label{
+    background-color: transparent;
+}
+#login button:last-child,
+#cadastrar button:last-child{
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: #23d1009a;
+    box-shadow: 1px 1px 5px #63636391;
+    color: rgb(238, 238, 238);
+    border-radius: 5px;
+}
+#login button:last-child:hover,
+#cadastrar button:last-child:hover{
+    background-color: #2ad100c0;
+    box-shadow: 1px 1px 5px #30303091;
+    cursor: pointer;
+}
+
+#cadastrar {
+    color: rgb(238, 238, 238);
+    background-image: url(../imagens/login/pexels-pixabay-531880.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: rgb(14, 14, 14);
+    width: 100%;
+    height: 130vh;
+}
+#cadastrar .container-fluid{
+    backdrop-filter: blur(0.3em);
+    background-color: #d7d7d771;
+    width: 100%;
+    height: 130vh;
+    padding-top: 10vh;
+}
+#cadastrar .center{
+    backdrop-filter: blur(2rem);
+    background-color: #00000079 !important;
+    border-left: 2px solid #5b5b5b;
+    border-top: 2px solid #747474;
+    border-right: 2px solid #323232;
+    border-bottom: 2px solid #383838;   
+    border-radius: 4px;
+    max-width: 600px;
+    height: 660px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+}
+#cadastrar .form-floating .form-control{
+    border-radius: 0;
+    background-color: rgba(171, 171, 171, 0.768);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-bottom: 1px solid #000;
+}
+#cadastrar .form-floating .form-control:focus{
+    box-shadow: none;
+}
+
+.next_option{
+    text-decoration: none;
+    color: rgb(238, 238, 238);
+}
+.next_option:hover{
+    color: #08f000;
+}
+
+
+/* Descrição "Sobre nós"*/
+#escritorio .main-escritorio{
+    width: 100%;
+    margin-bottom: 70px;
+    height: 100%;
+    position: relative;
+    background-color: rgb(37, 37, 37);
+    background-image: url(../imagens/escritório/img-7.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+} 
+#escritorio .main-escritorio .fundo-escritorio{
+    position: relative;
+    background-image: linear-gradient(to top,rgba(48, 48, 48, 0.89), rgb(51, 51, 51));
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+#escritorio .main-escritorio .fundo-escritorio h1{
+    font-size: 3.9em;
+    color: #8894ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#escritorio .main-escritorio .fundo-escritorio p{
+    color: rgb(238, 238, 238);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 20px;
+    line-height: 25px;
+    text-indent: 30px;
+    text-align: justify;
+}
+
+/* Cards de Areas de atuação */
+#atuacoes .container .card{
+    background-image: url(../imagens/glaucia/wooden-judges-gavel-table-courtroom-enforcement-office.jpg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;
+    background-attachment: fixed;
+    border: none;
+    box-shadow: 0.2px 0.2px 8px rgb(49, 49, 49);
+    border-radius: 0px 0px 19px 19px;
+}
+#atuacoes .container .card-blur{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+#atuacoes .container .card-header{
+    border: none;
+    text-align: center;
+    padding: 0;
+    background-color: rgb(34, 34, 34);
+}
+#atuacoes .container .card-header h2{
+    border-radius: 0px 0px 15px 0px;
+    color: #000000;
+    text-shadow: 2px 2px 9px rgb(214, 182, 255);
+    background-color: rgb(238, 238, 238);
+    font-weight: 650;
+    font-size: 1.7em;
+    padding: 18px 5px;
+    margin: 0;
+}
+#atuacoes .container .card-body{
+    color:rgb(238, 238, 238);
+    background-image: linear-gradient(to top,rgba(53, 53, 53, 0.938), rgb(34, 34, 34));
+    text-indent: 20px;
+}
+#atuacoes .container #card-button{
+    border: none;
+    padding: 20px 0;
+    font-weight: 700;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-radius: 0px 0px 19px 0px;
+    color: rgb(238, 238, 238);
+    text-shadow: 1px 1px 5px rgb(83, 83, 83);
+    background-color: #0d5985;
+}
+#atuacoes .container #card-button:hover{
+    text-shadow: 1px 1px 5px rgb(153, 153, 153);
+    background-color: #206c8f;
+}
+
+/* Modal de atuacoes */
+#modal-de-atuacao .modal{
+    background-color: rgba(0, 0, 0, 0.493);
+}
+#modal-de-atuacao .modal-header{
+    text-align: center;
+    padding: 0 25px;
+    font-size: 1.2em;
+    color: rgb(58, 3, 129);
+    background-color: rgb(238, 238, 238);
+}
+#modal-de-atuacao .modal-header h2{
+    font-weight: 650;
+    font-size: 1.7em;
+    padding: 18px 0;
+}
+#modal-de-atuacao .modal-body{
+    color: rgb(41, 41, 41);
+    background-color: rgb(190, 190, 190);
+    text-indent: 20px;
+}
+#modal-de-atuacao .modal-footer{
+    border: none;
+    background-color: rgb(190, 190, 190);
+    color: rgb(41, 41, 41);
+}
+
+/* Sobre nós */
+#about-us .row p{
+    color: rgb(43, 43, 43);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 5px;
+    line-height: 25px;
+    text-indent: 30px;
+    text-align: justify;
+}
+#about-us h2{
+    border-radius: 0 19px 0 0;
+    background-color: rgb(41, 41, 41);
+    border-bottom: 2px solid #000;
+    width: 100%;
+    font-size: 2.8em;
+    padding: 15px;
+    margin-bottom: 0;
+    text-align: center;
+    color: rgb(238, 238, 238);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* FOOTER - RODAPÉ*/
+#footer{
+    font-size: 1.1em;
+    height: 220px;
+    background-image: linear-gradient(to bottom, rgb(48, 48, 48), rgb(73, 73, 73));
+    color: rgb(238, 238, 238);
+    position: relative;
+}
+#footer .icons-footer{
+    text-decoration: none;
+}
+#footer .icons-footer i{
+    color: rgb(238, 238, 238);
+    padding: 0 15px;
+}
+#footer .link-me{
+    color: rgb(238, 238, 238);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+@media (max-width: 380px) {
+    #escritorio .main-escritorio .fundo-escritorio h1,
+    #about-us h2{
+        font-size: 2.2em;
+    }
+    #escritorio .main-escritorio .fundo-escritorio p{
+        font-size: 0.9em;
+    }
+    #modal-de-atuacao .modal-header h2,
+    #atuacoes .container .card-header h2{
+        padding: 12px 0px;
+        font-size: 1.4em;
+    }
+}
+
+
+@media (min-width: 380px) and (max-width: 768px) {
+    #escritorio .main-escritorio .fundo-escritorio h1{
+        font-size: 3.0em;
+    }
+}
+
+@media (max-width: 768px) {
+
+
+    #topo .nav-icons{
+        display: inline;
+        padding-top: 20px;
+    }
+
+    #topo .icon-bar{
+        display: inline;
+    }
+
+    #topo .nav-icons .nav-link{
+        display: inline;
+        width: auto;
+        padding-right: 3px;
+    }
+    #topo .nav-link .item{
+        box-shadow: 1px 0px 12px #000;
+    }
+}
+
+@media (min-height: 800px) {
+    #escritorio .main-escritorio{
+        width: 100%;
+        margin-bottom: 70px;
+        height: 750px !important;
+        position: relative;
+        background-color: rgb(39, 39, 39);
+        background-image: url(../imagens/escritório/img-7.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+    } 
+    #escritorio .main-escritorio .fundo-escritorio{
+        position: relative;
+        background-image: linear-gradient(to top,rgba(17, 17, 17, 0.89), rgb(20, 20, 20));
+        background-attachment: fixed;
+        width: 100%;
+        height: 750px !important;
+    }
+}
