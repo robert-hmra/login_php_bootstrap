@@ -1,14 +1,12 @@
-body{
-    background-color: rgb(238, 238, 238);
+*{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:rgb(46, 46, 46);
 }
 
 /* HEADER DO SITE*/
 /* BARRA DE NAVEGACAO */
 #topo .navbar{
-    background-image: linear-gradient(to right top, rgba(23, 20, 58, 0.979), rgba(4, 1, 43, 0.973));
-    box-shadow: 1px 1px 13px #0038d1;
+    background-image: linear-gradient(to right top, rgba(38, 38, 40, 0.813), rgba(25, 26, 36, 0.805));
+    box-shadow: 1px 1px 3px #a09f9f;
 }
 
 #topo .navbar-toggler {
@@ -21,7 +19,8 @@ body{
 }
 
 #topo .navbar-toggler:focus,
-#modal-de-atuacao .btn-close:focus{
+#modal-de-atuacao .btn-close:focus,
+#cadastrar input[type="radio"]:focus{
     box-shadow: none;
 }
 
@@ -42,22 +41,24 @@ body{
     text-shadow: 2px 2px 17px rgb(172, 172, 172);
 }
 #banner{
-    height: 80vh;
+    height: 100vh;
 }
 
 #banner .item-1{
     background-image: url(../imagens/pexels-cottonbro-studio-4753993.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
     height: 80vh;
+    object-fit: cover;
 }
 #banner .item-2{
     background-image: url(../imagens/pexels-agung-pandit-wiguna-1128318.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
     height: 80vh;
+    object-fit: cover;
 }
 #banner .item-3{
     background-image: url(../imagens/pexels-pixabay-237272\ \(1\).jpg);
@@ -65,16 +66,19 @@ body{
     background-repeat: no-repeat;
     background-position: center top;
     height: 80vh;
+    object-fit: cover;
 }
 
 #banner .carousel-caption{
+    padding-top: 0;
+    font-size: 0.5em;
     width: 100%;
     height: 25%;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.568);
+    background-color: rgb(45, 45, 45);
     color: #ffffff;
 }
 #banner .carousel-caption h5{
@@ -90,7 +94,7 @@ body{
 #banner .carousel-control-prev span, 
 .carousel-control-next span{
     height: 10%;
-    background-color: #000000;
+    background-color: #3a3a3afa;
 }
 
 #login{
@@ -106,9 +110,8 @@ body{
     background-color: #28282885;
     width: 100%;
     height: 100vh;
-    padding-left: 100px;
+    padding-top: 30vh;
 }
-
 #login .center-componentes{
     backdrop-filter: blur(2rem);
     background-color: #2d2d2dcd;
@@ -126,23 +129,17 @@ body{
     margin: auto;
     position: absolute;
 }
-#login .form-floating .form-control{
-    color: rgb(238, 238, 238);
-    border-radius: 0;
-    background-color: rgba(60, 60, 60, 0.502);
-    border: none;
+#login .form-floating .form-control,
+#cadastrar .form-floating .form-control{
+    background-color: rgba(230, 230, 230, 0.841);
     border-bottom: 1px solid rgba(2, 2, 2, 0.527);
+    border-radius: 0;
+    border: none;
 }
-#login .form-floating .form-control:focus{
+#login .form-floating .form-control:focus,
+#cadastrar .form-floating .form-control:focus{
     box-shadow: none;
-}
-#login .form-floating label{
-    font-size: 1rem;
-    color: rgb(255, 255, 255);
-    background-color: transparent;
-}
-#login .form-floating .floating-label{
-    background-color: transparent;
+    background-color: rgb(238, 238, 238);
 }
 #login button:last-child,
 #cadastrar button:last-child{
@@ -150,7 +147,6 @@ body{
     text-transform: uppercase;
     font-weight: 600;
     background-color: #23d1009a;
-    box-shadow: 1px 1px 5px #63636391;
     color: rgb(238, 238, 238);
     border-radius: 5px;
 }
@@ -161,47 +157,40 @@ body{
     cursor: pointer;
 }
 
+.form-floating::before{
+    background-color: transparent !important;
+}
+
 #cadastrar {
-    color: rgb(238, 238, 238);
     background-image: url(../imagens/login/pexels-pixabay-531880.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
-    background-color: rgb(14, 14, 14);
     width: 100%;
-    height: 130vh;
+    height: 1100px;
 }
 #cadastrar .container-fluid{
-    backdrop-filter: blur(0.3em);
-    background-color: #d7d7d771;
+    backdrop-filter: blur(0.3rem);
+    background-color: #ededed00;
     width: 100%;
-    height: 130vh;
+    height: 1100px;
     padding-top: 10vh;
 }
 #cadastrar .center{
     backdrop-filter: blur(2rem);
-    background-color: #00000079 !important;
-    border-left: 2px solid #5b5b5b;
-    border-top: 2px solid #747474;
-    border-right: 2px solid #323232;
-    border-bottom: 2px solid #383838;   
+    background-color: rgba(61, 61, 61, 0.878) !important;
+    border-width: 2px;
+    border-image: linear-gradient(to top left black, rgb(255, 255, 255));
     border-radius: 4px;
-    max-width: 600px;
-    height: 660px;
+    max-width: 670px;
+    height: 775px;
     left: 0;
     right: 0;
     margin: auto;
     position: absolute;
 }
-#cadastrar .form-floating .form-control{
-    border-radius: 0;
-    background-color: rgba(171, 171, 171, 0.768);
-    color: rgb(0, 0, 0);
-    border: none;
-    border-bottom: 1px solid #000;
-}
-#cadastrar .form-floating .form-control:focus{
-    box-shadow: none;
+#cadastrar input[type="radio"]:checked{
+    background-color: green;
 }
 
 .next_option{
@@ -247,6 +236,11 @@ body{
 }
 
 /* Cards de Areas de atuação */
+
+#atuacoes{
+    min-height: 700px;
+    padding-top: 10vh;
+}
 #atuacoes .container .card{
     background-image: url(../imagens/glaucia/wooden-judges-gavel-table-courtroom-enforcement-office.jpg);
     background-repeat: no-repeat;
@@ -254,22 +248,21 @@ body{
     background-size: cover;
     background-attachment: fixed;
     border: none;
-    box-shadow: 0.2px 0.2px 8px rgb(49, 49, 49);
+    box-shadow: 0px 0.2px 5px rgb(150, 150, 150);
     border-radius: 0px 0px 19px 19px;
+    background-color: rgb(0, 0, 0);
 }
-#atuacoes .container .card-blur{
-    background-color: rgba(255, 255, 255, 0.1);
+#atuacoes .container .card{
+    background-color: rgb(57, 57, 57);
 }
 #atuacoes .container .card-header{
     border: none;
     text-align: center;
     padding: 0;
-    background-color: rgb(34, 34, 34);
 }
 #atuacoes .container .card-header h2{
     border-radius: 0px 0px 15px 0px;
     color: #000000;
-    text-shadow: 2px 2px 9px rgb(214, 182, 255);
     background-color: rgb(238, 238, 238);
     font-weight: 650;
     font-size: 1.7em;
@@ -278,7 +271,7 @@ body{
 }
 #atuacoes .container .card-body{
     color:rgb(238, 238, 238);
-    background-image: linear-gradient(to top,rgba(53, 53, 53, 0.938), rgb(34, 34, 34));
+    background-image: linear-gradient(to top,rgba(53, 53, 53, 0.938), rgb(57, 57, 57));
     text-indent: 20px;
 }
 #atuacoes .container #card-button{
@@ -382,6 +375,15 @@ body{
         padding: 12px 0px;
         font-size: 1.4em;
     }
+    #cadastrar .center{
+        height: 820px;
+    }
+}
+@media (max-width:285px) {
+    #cadastrar .center{
+        height: 905px;
+    }
+    
 }
 
 
@@ -431,5 +433,7 @@ body{
         background-attachment: fixed;
         width: 100%;
         height: 750px !important;
+    }
+    .carousel-item{
     }
 }
