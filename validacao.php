@@ -72,7 +72,7 @@
 
                     if ($res == true) {
 
-                        print '<script>location.href = "login.php";</script>';
+                        print '<script>location.href = "index.php";</script>';
                     }
                 }
             }
