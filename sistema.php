@@ -1,6 +1,10 @@
 
 <html lang="pt-BR">
-  <?php ?>
+  <?php 
+    if(!isset($_POST['email'])or(!isset($_POST['senha']))){
+      echo 'Sem permissão para utilizar a página!';
+    }
+  ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

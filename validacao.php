@@ -2,28 +2,39 @@
     include("config.php");
     switch (@$_REQUEST['acao']) {
         case 'logar':
-            $nome = $_POST["email"];
-            $senha = $_POST["senha_login"];
+            if (isset($_POST['email']) && isset($_POST['senha'])) {
+                $email = $conn->real_escape_string($_POST["email"]);
+                $senha = $conn->real_escape_string($_POST["senha_login"]);
 
-            $sql = "SELECT * FROM cadastro";
-            $res = $conn-> query($sql) or die ($conn->errno);
-            $qtd = $res->num_rows;
-            if(($qtd > 0)&&($res == True)){
+                $sql = "SELECT * FROM cadastro where email ='$email' and senha='$senha'";
+                $res = $conn-> query($sql) or die ($conn->errno);
+                $qtd = $res->num_rows;
                 $row = $res -> fetch_object();
-                if (($nome != $row -> email) && ($senha != $row -> senha)){
-                    print '<script>location.href = "sistema.php";</script>';
-                }else{
+
+                if(($qtd > 0)&&($res == True)){
+                
+                    if (!isset($_SESSION)){
+                        session_start();
+                    }
+
+                    $_SESSION['email']  = $row -> email;
+                    $_SESSION['senha']  = $row -> senha;
+
+                    print  "Te encontrei: "+$_SESSION['email'];
+                }
+                print '<script>location.href = "sistema.php";</script>';
+            }
+            else{ 
                     print   "<div class='alert bg-danger bg-opacity-75 text-light position-fixed end-0 start-0 bottom-0 m-auto w-25'>
                                 Usuário ou senha incorreta
                                 <button type='button' class='btn-close end-0 position-absolute me-3' data-bs-dismiss='alert' aria-label='Close'>
                                     <span type='hidden' class='invisible'>botao de fechar</span>
                                 </button>
                             </div>";
-                            print "$nome e $senha";
+                            print "$email e $senha";
                 }
-
-            }
             break;
+
         case 'cadastrar':
             $nome_completo  = $_POST['nome_completo'];
             $email          = $_POST['email_login'];
@@ -49,7 +60,6 @@
                     print   "<div class='alert bg-danger bg-opacity-75 text-light position-fixed end-0 start-0 bottom-0 m-auto w-25'>
                                 Email ou usuário já cadsatrado
                                 <button type='button' class='btn-close end-0 position-absolute me-3' data-bs-dismiss='alert' aria-label='Close'>
-                                    <span type='hidden' class='invisible'>botao de fechar</span>
                                 </button>
                             </div>" ;
                 }else{

@@ -16,17 +16,18 @@
     <style></style>
 </head>
 <body>
-    <main id="cadastrar" >
-        <div class="container-fluid justify-content-center" >
-            <div class="row center py-4 justify-centent-center">
-                <div class="col-12">
+    <main id="cadastrar" class="text-center">
+        <div class="container-fluid justify-content-center py-5 gx-1">
+            <h1 class="mb-5">Cadastro</h1>
+            <div class="row center px-3 py-4 mb-5">
+                <div class="col-12 p-0">
                     <form action="?envio=cadastro" method="POST">
                         <input type="hidden" name="acao" value="cadastrar">
-                        <div class="form-floating mb-5">
+                        <div class="form-floating mb-4">
                             <input name="nome_completo" title="Nome obrigatório" id="nome-completo" type="text" name="user_login" class="form-control" placeholder="Nome completo"  required>
                             <label class="floating-label" for="nome-completo" >Nome completo</label>
                         </div>
-                        <div class="form-floating mb-5">
+                        <div class="form-floating mb-4">
                             <input name="email_login" title="Exemplo: ana21abc@gmail.com" type="email" class="form-control form-input" id="email" placeholder="Melhor Email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" required>
                             <label class="floating-label" for="email">Melhor Email</label>
                         </div>                        
@@ -34,10 +35,10 @@
                             <input name="telefone" title="DDD X XXXX-XXXX" id="telefone" type="tel" class="form-control" placeholder="Telefone" required>
                             <label class="floating-label" for="telefone">Telefone</label>
                         </div>
-                        <div class="form-floating row gy-5 mb-5">
-                            <div class="col">
+                        <div class="row form-floating gy-5 mb-5 w-auto">
+                            <div class="col text-start">
                                 <div class="btn-group dropdown">
-                                    <button class="btn btn-light form-control w-100 m-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">
+                                    <button class="btn btn-light form-control w-100 p-3 m-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">
                                         Gênero
                                     </button>
                                     <ul class="dropdown-menu bg-light ps-3 form-check-group" id="dropdown">
@@ -63,17 +64,17 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <input name="data_nasc" min="1990-01-01" max="2010-12-31" id="data-nascimento" type="date" name="user_login" class="form-control" aria-autocomplete="list" required>
+                                <input name="data_nasc" min="1990-01-01" max="2010-12-31" id="data-nascimento" type="date" name="user_login" class="form-control py-3" aria-autocomplete="list" required>
                             </div>
                         </div>
-                        <div class="form-floating mb-5">
+                        <div class="form-floating mb-3">
                             <input type="password" name="senha_user" id="senha" class="form-control" placeholder="Sua senha" minlength="8" maxlength="20" aria-autocomplete="list" required>
                             <label for="senha" class="floating-label">Sua senha</label>
                             <div for="senha" class="form-text text-light">
                                 Mínimo 8 caracteres, máximo 20, use caracteres especiais
                             </div>
                         </div>
-                        <div class="form-floating mb-5">
+                        <div class="form-floating mb-4">
                             <input type="password" name="confirm_senha" id="confirm_senha" class="form-control" placeholder="Confirme sua senha" minlength="8" maxlength="20" aria-autocomplete="list" required>
                             <label for="confirm_senha" class="floating-label">Confirme sua senha</label>
                             <div for="confirm_senha" class="form-text text-light">

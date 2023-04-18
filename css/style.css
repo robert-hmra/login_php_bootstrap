@@ -166,28 +166,25 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
-    width: 100%;
-    height: 1100px;
+    background-attachment: fixed;
+    height: 100%;
 }
 #cadastrar .container-fluid{
     backdrop-filter: blur(0.3rem);
-    background-color: #ededed00;
-    width: 100%;
-    height: 1100px;
-    padding-top: 10vh;
+    background-color: #2a2a2a33;
+    height: 100%;
 }
 #cadastrar .center{
     backdrop-filter: blur(2rem);
-    background-color: rgba(61, 61, 61, 0.878) !important;
+    background-color: rgba(32, 32, 32, 0.867) !important;
     border-width: 2px;
     border-image: linear-gradient(to top left black, rgb(255, 255, 255));
     border-radius: 4px;
     max-width: 670px;
-    height: 775px;
     left: 0;
     right: 0;
     margin: auto;
-    position: absolute;
+    min-height: 100%;
 }
 #cadastrar input[type="radio"]:checked{
     background-color: green;
@@ -375,15 +372,6 @@
         padding: 12px 0px;
         font-size: 1.4em;
     }
-    #cadastrar .center{
-        height: 820px;
-    }
-}
-@media (max-width:285px) {
-    #cadastrar .center{
-        height: 905px;
-    }
-    
 }
 
 
@@ -433,7 +421,5 @@
         background-attachment: fixed;
         width: 100%;
         height: 750px !important;
-    }
-    .carousel-item{
     }
 }
