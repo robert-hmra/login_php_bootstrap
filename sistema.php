@@ -1,8 +1,31 @@
 
 <html lang="pt-BR">
+
   <?php 
-    if(!isset($_POST['email'])or(!isset($_POST['senha']))){
-      echo 'Sem permissão para utilizar a página!';
+    if (!isset($_SESSION)) {
+      session_start();
+    }
+    if(!isset($_SESSION['email'])or(!isset($_SESSION['senha']))){
+     echo "<div class='text-center bg-light bg-opacity-75 text-light z-3 position-fixed end-0 start-0 top-0 bottom-0 m-auto w-100 h-100 rounded-0'>
+              <div class='bg-dark position-absolute m-auto bottom-0 h-25 w-25 top-0 start-0 end-0 py-3 rounded-2'>
+                <h4 class='mb-4'>Usuário não identificado</h4>
+                <p class=''>Usuário não informado, ou sessão interrompida!<br> <a href='index.php' class='link-warning fw-bold'>Faça seu login</a> ou <a href='cadastro.php' class='link-warning fw-bold'>registre cadastro</a>.
+             </div>
+           </div>";
+      echo("<style>
+                body{
+                  overflow:hidden;  
+                }
+            </style>");
+
+    }else{
+      $nome = $_SESSION['email'];
+      $senha = $_SESSION['senha'];
+      echo "<div class='alert bg-primary bg-opacity-100 text-light z-3 position-fixed end-0 bottom-0 m-auto me-2 mb-2  rounded-0'>
+              <button class='btn-close end-0 top-0 float-end' data-bs-dismiss='alert' aria-label='close'></button>
+              <h4 class='text-start mb-4'>Logado com sucesso</h4>
+              <p>Seja bem-vindo !
+            </div>";
     }
   ?>
 <head>
@@ -23,15 +46,17 @@
 <body>
 
   <!-- topo/header -->
-  <div id="topo" class="pt-4">
+  <div id="topo">
     
     <!-- Barra de navegação -->   
-    <nav class="navbar navbar-expand-md fixed-top py-2" id="scrollspy">      
+    <nav class="navbar navbar-expand-md " id="scrollspy">
+
       <div class="container-fluid m-0 p-0">
 
         <!-- HOME -->
         <div class="ms-3">
-            <a title="realizar_login" class="nav-link item link-formated" href="../login.php">
+            <a title="realizar_login" class="nav-link item link-formated" href="logout.php">
+              <img src="imagens/contact/logout.svg" alt="">
             </a>
         </div>
         <button class="navbar-toggler custom-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
@@ -55,13 +80,19 @@
           <!-- Icons on the left of navbar -->
           <ul class="navbar-nav nav-icons me-2">
             <li class="nav-item icon-bar">
-              <a rel="noopener" title="link_email" class="nav-link link-formated" target="_blank" href=""><i class="i bi bi-envelope-fill"></i></a>
+              <a rel="noopener" title="link_email" class="nav-link link-formated" target="_blank" href="">
+                <img src="imagens/contact/email-plus.svg" alt="">
+              </a>
             </li>
             <li class="nav-item icon-bar">
-              <a rel="noopener" title="link_wahtsapp" class="nav-link link-formated" target="_blank" href=""><i class="i bi bi-whatsapp"></i></a>
+              <a rel="noopener" title="link_wahtsapp" class="nav-link link-formated" target="_blank" href="">
+                <img src="imagens/contact/whatsapp.svg" alt="">
+              </a>
             </li>
             <li class="nav-item icon-bar">
-              <a rel="noopener" title="link_instagram" class="nav-link link-formated" target="_blank" href=""><i class="i bi bi-instagram"></i></a>
+              <a rel="noopener" title="link_instagram" class="nav-link link-formated" target="_blank" href="">
+                <img src="imagens/contact/instagram.svg" alt="" width="20">
+              </a>
             </li>
           </ul>
 
@@ -70,7 +101,7 @@
     </nav>
     
     <!-- Carrousel -->
-    <div id="banner" class="row container mx-auto px-0 justify-content-center align-items-center pt-3">
+    <div id="banner" class="row container mx-auto px-0 justify-content-center align-items-center pt-1">
       <div class="col-12">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators m-0">
@@ -145,14 +176,14 @@
           <div class="col-11 col-sm-8 col-md-6 col-lg-4 order-3 order-md-1 order-lg-3 order-xl-1 order-xxl-1 mb-5">
             <div class="card">
               <div class="card-header">
-                <h2>TITULO 1</h2>
+                <h2>Titulo 1</h2>
               </div>
-              <div class="card-body">
+              <div class="card-body mt-4">
                 <P>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quam adipisci animi qui, eius et nostrum possimus velit dolore porro voluptate expedita, doloremque magni esse rem sint, tenetur iste pariatur?
                 </P>
               </div>
-              <button class="btn btn-dark border-0 border-radius-0" data-bs-toggle="modal" data-bs-target="#modal-1">Saber mais</button>
+              <button class="btn btn-dark py-3" data-bs-toggle="modal" data-bs-target="#modal-1">Saber mais</button>
             </div>
           </div>
   
@@ -160,29 +191,29 @@
           <div class="col-11 col-sm-8 col-md-6 col-lg-4 order-1 order-md-3 order-lg-2 order-xl-3 order-xxl-2 mb-5">
             <div class="card">
               <div class="card-header">
-                <h2>TITULO 2</h2>
+                <h2>Titulo 2</h2>
               </div>
-              <div class="card-body">
+              <div class="card-body mt-4">
                 <P>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto odio totam esse expedita odit tempore sunt quae. Labore, quos magni aut aliquid nesciunt praesentium, mollitia saepe voluptatum repellat, velit quod!
                 </P>
               </div>
-              <button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#modal-2">Saber mais</button>
+              <button class="btn btn-dark py-3" type="button" data-bs-toggle="modal" data-bs-target="#modal-2">Saber mais</button>
             </div>
           </div>
   
-          <!-- Card 1 -->
+          <!-- Card 3 -->
           <div class="col-11 col-sm-8 col-md-6 col-lg-4 order-2 order-md-3 order-lg-1 order-xl-2 order-xxl-3 mb-5">
             <div class="card">
               <div class="card-header">
-                <h2>titulo3</h2>
+                <h2>Titulo 3</h2>
               </div>
-              <div class="card-body">
+              <div class="card-body mt-4">
                 <P>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati reprehenderit eaque ipsum quisquam, natus, tempora consectetur cupiditate omnis incidunt, eos veniam maiores sint dolor dolorem ducimus. Tempore tenetur inventore nemo.
                 </P>
               </div>
-              <button class="btn btn-dark border-0 border-radius-0" data-bs-toggle="modal" data-bs-target="#modal-1">Saber mais</button>
+              <button class="btn btn-dark py-3" data-bs-toggle="modal" data-bs-target="#modal-3">Saber mais</button>
             </div>
           </div>
           
@@ -192,7 +223,7 @@
     </div>
 
     <!-- Modais -->
-    <div id="modal-de-atuacao" type="aria-hidden">
+    <div id="modal-de-atuacao" type="hidden">
       <!-- Modal 1 -->
       <div class="modal " id="modal-1" tabindex="-1" aria-labelledby="ataucao_1Label" aria-hidden="true">
         <div class="modal-dialog">

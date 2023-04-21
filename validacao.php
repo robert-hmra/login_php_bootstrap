@@ -1,37 +1,34 @@
 <?php 
-    include("config.php");
     switch (@$_REQUEST['acao']) {
         case 'logar':
-            if (isset($_POST['email']) && isset($_POST['senha'])) {
-                $email = $conn->real_escape_string($_POST["email"]);
-                $senha = $conn->real_escape_string($_POST["senha_login"]);
+                $email = $conn->real_escape_string($_POST['email']);
+                $senha = $conn->real_escape_string($_POST['senha_login']);
 
-                $sql = "SELECT * FROM cadastro where email ='$email' and senha='$senha'";
+                $sql = "SELECT * FROM cadastro";
                 $res = $conn-> query($sql) or die ($conn->errno);
                 $qtd = $res->num_rows;
                 $row = $res -> fetch_object();
 
-                if(($qtd > 0)&&($res == True)){
+                if(($qtd > 0)||($res == True)){
                 
                     if (!isset($_SESSION)){
                         session_start();
                     }
 
+                    $_SESSION['nome']   = $row -> nome;
                     $_SESSION['email']  = $row -> email;
                     $_SESSION['senha']  = $row -> senha;
 
-                    print  "Te encontrei: "+$_SESSION['email'];
+                    print  "Te encontrei: ".$_SESSION['nome'];
+                    print '<script>location.href = "sistema.php";</script>';
                 }
-                print '<script>location.href = "sistema.php";</script>';
-            }
             else{ 
-                    print   "<div class='alert bg-danger bg-opacity-75 text-light position-fixed end-0 start-0 bottom-0 m-auto w-25'>
+                    print   "<div id='alert' class='alert bg-danger bg-opacity-75 text-light position-fixed end-0 start-0 bottom-0 m-auto w-25'>
                                 Usuário ou senha incorreta
                                 <button type='button' class='btn-close end-0 position-absolute me-3' data-bs-dismiss='alert' aria-label='Close'>
                                     <span type='hidden' class='invisible'>botao de fechar</span>
                                 </button>
                             </div>";
-                            print "$email e $senha";
                 }
             break;
 
@@ -48,18 +45,18 @@
             if ($senha != $senha_confirm) {
                 print   "<div class='alert bg-danger bg-opacity-75 text-light position-fixed end-0 start-0 bottom-0 m-auto w-25'>
                             As senhas não coincidem
-                            <button type='button' class='btn-close end-0 position-absolute me-3' data-bs-dismiss='alert' aria-label='Close'>
+                            <button class='btn-close end-0 position-absolute me-3' data-bs-dismiss='alert' aria-label='Close'>
                                 <span type='hidden' class='invisible'>botao de fechar</span>
                             </button>
                         </div>" ;
             }else {
-                $sql1 = "SELECT * from cadastro";
+                $sql1 = "SELECT * FROM cadastro";
                 $res1 = $conn -> query($sql1) or die ($conn->error); 
                 $row1 = $res1->fetch_object();
                 if (($res1 == true) && ($nome_completo == $row1 -> nome)|| ($email == $row1 -> email)) {
                     print   "<div class='alert bg-danger bg-opacity-75 text-light position-fixed end-0 start-0 bottom-0 m-auto w-25'>
                                 Email ou usuário já cadsatrado
-                                <button type='button' class='btn-close end-0 position-absolute me-3' data-bs-dismiss='alert' aria-label='Close'>
+                                <button class='btn-close end-0 position-absolute me-3' data-bs-dismiss='alert' aria-label='Close'>
                                 </button>
                             </div>" ;
                 }else{
@@ -88,4 +85,3 @@
             }
             break;
     }
-?>

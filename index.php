@@ -50,16 +50,15 @@
         </footer>
     </div>
 </main>
+
     <?php 
+        include('config.php');
         switch (@$_REQUEST['envio']) {
             case 'login':
                 include("validacao.php");
                 break;
-            
-            default:
-                # code...
-                break;
         }
     ?>
+    
 </body>
 </html>

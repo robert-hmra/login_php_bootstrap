@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Bootstrap JavaScript -->
-    <script src="bootstrap-5.3.0/js/bootstrap.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
-    <link href="bootstrap-5.3.0/css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
    <!-- Css Local -->    
     <link rel="stylesheet" href="css/style.css"> 
 
@@ -18,8 +18,8 @@
 <body>
     <main id="cadastrar" class="text-center">
         <div class="container-fluid justify-content-center py-5 gx-1">
-            <h1 class="mb-5">Cadastro</h1>
             <div class="row center px-3 py-4 mb-5">
+            <h1 class="mb-5">Cadastro</h1>
                 <div class="col-12 p-0">
                     <form action="?envio=cadastro" method="POST">
                         <input type="hidden" name="acao" value="cadastrar">
@@ -35,28 +35,28 @@
                             <input name="telefone" title="DDD X XXXX-XXXX" id="telefone" type="tel" class="form-control" placeholder="Telefone" required>
                             <label class="floating-label" for="telefone">Telefone</label>
                         </div>
-                        <div class="row form-floating gy-5 mb-5 w-auto">
+                        <div class="row form-floating gy-5 mb-5">
                             <div class="col text-start">
-                                <div class="btn-group dropdown">
-                                    <button class="btn btn-light form-control w-100 p-3 m-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">
+                                <div class=" dropdown">
+                                    <button class="btn btn-light dropdown-toggle form-control p-3" type="button" data-bs-toggle="dropdown" aria-expanded="true">
                                         Gênero
                                     </button>
-                                    <ul class="dropdown-menu bg-light ps-3 form-check-group" id="dropdown">
-                                        <li for="genero1">
-                                            <input class="form-check-input" type="radio" name="genero" id="genero1" value="1" required>
-                                            <label class="form-check-label" for="genero1">
+                                    <ul class="dropdown-menu bg-light ps-3">
+                                        <li>
+                                            <input class="form-radio-input" type="radio" name="genero" id="genero1" value="1" required>
+                                            <label class="floating-label">
                                                 Masculino
                                             </label>
                                         </li>
-                                        <li for="genero2">
-                                            <input class="form-check-input" type="radio" name="genero" id="genero2" value="2" required>
-                                            <label class="form-check-label" for="genero2">
+                                        <li>
+                                            <input class="form-radio-input" type="radio" name="genero" id="genero2" value="2" required>
+                                            <label class="floating-label">
                                                 Feminino
                                             </label>
                                         </li>
-                                        <li for="genero3">
-                                            <input class="form-check-input" type="radio" name="genero" id="genero3" value="3" required>
-                                            <label class="form-check-label" for="genero3">
+                                        <li>
+                                            <input class="form-radio-input" type="radio" name="genero" id="genero3" value="3" required>
+                                            <label class="floating-label">
                                                 Outro
                                             </label>
                                         </li>
@@ -70,14 +70,14 @@
                         <div class="form-floating mb-3">
                             <input type="password" name="senha_user" id="senha" class="form-control" placeholder="Sua senha" minlength="8" maxlength="20" aria-autocomplete="list" required>
                             <label for="senha" class="floating-label">Sua senha</label>
-                            <div for="senha" class="form-text text-light">
+                            <div for="senha" class="text-start text-secondary">
                                 Mínimo 8 caracteres, máximo 20, use caracteres especiais
                             </div>
                         </div>
                         <div class="form-floating mb-4">
                             <input type="password" name="confirm_senha" id="confirm_senha" class="form-control" placeholder="Confirme sua senha" minlength="8" maxlength="20" aria-autocomplete="list" required>
                             <label for="confirm_senha" class="floating-label">Confirme sua senha</label>
-                            <div for="confirm_senha" class="form-text text-light">
+                            <div for="confirm_senha" class="text-start text-secondary">
                                 Mínimo 8 caracteres, máximo 20, use caracteres especiais
                             </div>
                         </div>
@@ -97,9 +97,10 @@
         </div>
     </main>
             <?php
+                include('config.php');
                 switch(@$_REQUEST['envio']){
                     case 'cadastro':
-                        include ('validacao.php');
+                        include ("validacao.php");
                         break;
                 }
             ?>
